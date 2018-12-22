@@ -8,6 +8,9 @@ services:
       context: .docker
       dockerfile: Dockerfile
     restart: unless-stopped
+    # uncomment volume if you wish to use plugin support
+    # volumes:
+      # - ~/nx584plugins:/plugins
     ports:
       - 5007:5007
     environment:

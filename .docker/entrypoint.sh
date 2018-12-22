@@ -1,6 +1,8 @@
 #!/bin/bash
 args=()
 
+pip install -r /plugins/requirements.txt
+
 if [ ! -z "$SERIAL" ]; then
     args+=(--serial $SERIAL)
 fi

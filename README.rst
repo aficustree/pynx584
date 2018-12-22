@@ -62,6 +62,8 @@ Before creating the Docker container, you need to define how you connect to the 
        context: .docker
        dockerfile: Dockerfile
      restart: unless-stopped
+     volumes:
+       - ~/nx584plugins:/plugins
      ports:
        - 5007:5007
      environment:
@@ -75,6 +77,8 @@ To build the image, create the Docker container and then run it, make sure you'r
  # docker-compose up -d
 
 You should now be able to conect to the pynx584 Docker container via its exposed port (default :code:`5007`).
+
+If you wish to use the pynx584 module with custom plugins, you may store them, one per subdirectory, in a volume named nx584plugins. Docker will look for a requirements.txt file in the root directory and load all specified plugins.
 
 Config
 ------
