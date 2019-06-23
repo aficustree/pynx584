@@ -15,4 +15,8 @@ if [ ! -z "$CONNECT" ]; then
     args+=(--connect $CONNECT)
 fi
 
+if [ ! -z "$CONFIG_LOC" ]; then
+    args+=(--config $CONFIG_LOC)
+fi
+
 nx584_server --listen $LISTEN "${args[@]}"
